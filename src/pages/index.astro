@@ -8,6 +8,31 @@ const priorityOrder: Priority[] = ['P0', 'P1', 'P2'];
 const totalTools = tools.length;
 import { getSisterSites } from '../data/sisterSites';
 const sisters = getSisterSites('image');
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hypergrad.cn/#organization",
+      "name": "HyperGrad",
+      "url": "https://hypergrad.cn/",
+      "description": "HyperGrad 是一系列纯前端在线工具 + 本地加密笔记应用的集合站，专注隐私保护与本地化处理。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://image.hypergrad.cn/#website",
+      "url": "https://image.hypergrad.cn/",
+      "name": "HyperGrad Image — 纯前端图片工具箱 · SVG/WebP/EXIF · 100% 本地处理",
+      "description": "12 个细分图片工具：SVG 优化/编辑/转PNG、WebP 转换、EXIF 查看/清理、占位图、Base64 互转、颜色提取、图片拼接、GIF 截帧、格式转换。所有图片处理在浏览器本地完成，不上传服务器。",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://hypergrad.cn/#organization"
+      }
+    }
+  ]
+};
+
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,6 +58,9 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
   s.parentNode.insertBefore(hm, s);
 })();
   </script>
+  <!-- home-schema:start -->
+  <script type="application/ld+json" set:html={JSON.stringify(homeSchema)} />
+  <!-- home-schema:end -->
 </head>
 <body>
   <!-- DeepSeal 推广条 -->

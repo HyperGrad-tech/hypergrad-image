@@ -5,10 +5,10 @@
 
 :root {
   /* ===== 色彩系统（与 DeepSeal 官网一致） ===== */
-  --blue: #2D5F8A;
-  --blue-light: #3B7AB0;
-  --blue-dark: #1F4361;
-  --blue-bg: #EFF5FA;
+  --blue: #6366F1;
+  --blue-light: #818CF8;
+  --blue-dark: #4F46E5;
+  --blue-bg: #EEF2FF;
 
   --bg: #FAFAF7;
   --bg-card: #FFFFFF;
@@ -916,7 +916,7 @@ input, textarea, select {
   font-size: 13px;
   line-height: 1.7;
 }
-.json-key { color: #3B7AB0; }
+.json-key { color: #818CF8; }
 .json-string { color: #2D7A4F; }
 .json-number { color: #C8862E; }
 .json-boolean { color: #B83A3A; }

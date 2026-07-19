@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 
 const DEFAULT_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="#2D5F8A" />
+  <circle cx="50" cy="50" r="40" fill="#6366F1" />
   <circle cx="50" cy="50" r="20" fill="#fff" />
 </svg>`;
 
@@ -107,7 +107,7 @@ export default function SvgEditor() {
           <div><code style={{ background: 'var(--bg-soft)', padding: '2px 6px', borderRadius: '4px' }}>&lt;path d="M0,0 L100,100"/&gt;</code><br /><span class="text-muted">路径：M 移动 L 直线</span></div>
           <div><code style={{ background: 'var(--bg-soft)', padding: '2px 6px', borderRadius: '4px' }}>&lt;rect x="0" y="0" width="50" height="50"/&gt;</code><br /><span class="text-muted">矩形</span></div>
           <div><code style={{ background: 'var(--bg-soft)', padding: '2px 6px', borderRadius: '4px' }}>&lt;circle cx="50" cy="50" r="40"/&gt;</code><br /><span class="text-muted">圆形</span></div>
-          <div><code style={{ background: 'var(--bg-soft)', padding: '2px 6px', borderRadius: '4px' }}>fill="#2D5F8A" stroke="#fff"</code><br /><span class="text-muted">填充与描边</span></div>
+          <div><code style={{ background: 'var(--bg-soft)', padding: '2px 6px', borderRadius: '4px' }}>fill="#6366F1" stroke="#fff"</code><br /><span class="text-muted">填充与描边</span></div>
         </div>
       </div>
     </div>

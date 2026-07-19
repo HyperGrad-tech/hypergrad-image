@@ -7,7 +7,7 @@ const escapeXml = (s: string) => s.replace(/[<>&'"]/g, c => ({ '<': '&lt;', '>':
 export default function Placeholder() {
   const [width, setWidth] = useState(800);
   const [height, setHeight] = useState(600);
-  const [bgColor, setBgColor] = useState('#2D5F8A');
+  const [bgColor, setBgColor] = useState('#6366F1');
   const [textColor, setTextColor] = useState('#FFFFFF');
   const [text, setText] = useState('');
   const [format, setFormat] = useState<Fmt>('png');
@@ -107,7 +107,7 @@ export default function Placeholder() {
 
         <div class="toolbar mt-md">
           {format === 'png' && <button class="btn btn-primary" onClick={generatePng}>生成并预览</button>}
-          <button class="btn btn-secondary btn-sm" onClick={() => { setWidth(800); setHeight(600); setBgColor('#2D5F8A'); setTextColor('#FFFFFF'); setText(''); }}>重置</button>
+          <button class="btn btn-secondary btn-sm" onClick={() => { setWidth(800); setHeight(600); setBgColor('#6366F1'); setTextColor('#FFFFFF'); setText(''); }}>重置</button>
           {format === 'png' && pngUrl && <button class="btn btn-primary btn-sm" onClick={downloadPng}>下载 PNG</button>}
           {format === 'svg' && <button class="btn btn-secondary btn-sm" onClick={() => navigator.clipboard.writeText(svgContent)}>复制 SVG 代码</button>}
           {format === 'svg' && <button class="btn btn-primary btn-sm" onClick={downloadSvg}>下载 SVG</button>}

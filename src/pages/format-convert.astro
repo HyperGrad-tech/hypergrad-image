@@ -1,0 +1,20 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import FormatConvert from '../components/tools/FormatConvert.tsx';
+---
+<ToolLayout slug="format-convert">
+  <FormatConvert client:load />
+  <div slot="seo-content">
+    <h2>在线图片格式转换工具</h2>
+    <p>JPG、PNG、WebP、AVIF 四种格式互转，质量可调，批量处理。AVIF 是 2026 年最先进的图片格式，同质量下比 WebP 再小 20-30%。所有转换基于浏览器原生 Canvas 与 createImageBitmap API 本地完成。</p>
+    <h3>四种格式对比</h3>
+    <ul>
+      <li><strong>JPG</strong>：有损，不支持透明，兼容性最好，适合照片。</li>
+      <li><strong>PNG</strong>：无损，支持透明，体积大，适合图标、线稿。</li>
+      <li><strong>WebP</strong>：有损/无损，支持透明和动画，体积小，现代主流。</li>
+      <li><strong>AVIF</strong>：有损/无损，支持透明和动画，体积最小，2026 年最先进。</li>
+    </ul>
+    <h3>AVIF 的现状</h3>
+    <p>AVIF 基于 AV1 视频编码，2026 年已被 Chrome 85+、Safari 16+、Firefox 86+ 全面支持，市场份额超过 95%。它是目前压缩率最高的图片格式，但编码速度比 WebP 慢 3-5 倍，适合作为静态资源离线转换。本工具支持将现有图片一键转 AVIF。</p>
+  </div>
+</ToolLayout>

@@ -1,0 +1,18 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import ImageStitch from '../components/tools/ImageStitch.tsx';
+---
+<ToolLayout slug="image-stitch">
+  <ImageStitch client:load />
+  <div slot="seo-content">
+    <h2>在线图片拼接工具</h2>
+    <p>多张图片纵向或横向拼接为一张，可调间距、对齐方式、背景色。适合做长图、连续截图、对比图、拼贴画。所有拼接在浏览器 Canvas 本地完成，图片不上传服务器。</p>
+    <h3>两种拼接模式</h3>
+    <ul>
+      <li><strong>纵向拼接</strong>：图片从上到下堆叠，适合做长图、聊天记录截图连续展示、漫画分镜。</li>
+      <li><strong>横向拼接</strong>：图片从左到右排列，适合做对比图（前后对比、产品对比）、拼贴画、宽幅全景。</li>
+    </ul>
+    <h3>不同尺寸图片的处理</h3>
+    <p>纵向拼接时，不同宽度的图片可选左对齐、居中、右对齐，空白区域用背景色填充。也可选择"缩放到统一宽度"将所有图片缩放至最窄图片的宽度。横向拼接同理，可选顶部、居中、底部对齐或缩放到统一高度。</p>
+  </div>
+</ToolLayout>

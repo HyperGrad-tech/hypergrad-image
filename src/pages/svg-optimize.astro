@@ -1,0 +1,21 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import SvgOptimize from '../components/tools/SvgOptimize.tsx';
+---
+<ToolLayout slug="svg-optimize">
+  <SvgOptimize client:load />
+  <div slot="seo-content">
+    <h2>在线 SVG 优化压缩工具</h2>
+    <p>SVG 优化工具清理矢量图中的冗余内容，在不影响视觉效果的前提下显著减小文件体积。所有解析与优化都在浏览器本地完成，SVG 不会上传到任何服务器。</p>
+    <h3>优化策略</h3>
+    <ul>
+      <li><strong>移除注释与元数据</strong>：剥离 <code>&lt;!-- --&gt;</code> 注释、<code>&lt;metadata&gt;</code>、编辑器残留（Illustrator、Figma、Sketch 等导出时附带的信息）。</li>
+      <li><strong>移除默认属性</strong>：如 <code>stroke-width="1"</code>、<code>fill="black"</code> 等浏览器默认值可安全移除。</li>
+      <li><strong>降低数值精度</strong>：将 <code>12.3456789</code> 等高精度小数截断为 <code>12.346</code>，肉眼几乎无差但体积更小。</li>
+      <li><strong>折叠空白字符</strong>：移除多余的换行、缩进、空格，合并相邻文本节点。</li>
+      <li><strong>移除隐藏元素</strong>：<code>display="none"</code>、<code>opacity="0"</code>、超出 viewBox 的内容。</li>
+    </ul>
+    <h3>何时该优化 SVG</h3>
+    <p>网页图标系统、Logo、插画等任何时候使用 SVG 都建议先优化。设计软件导出的 SVG 通常体积是优化后的 2-5 倍，对页面性能影响明显。优化后的 SVG 还可直接嵌入 HTML/CSS，无需额外 HTTP 请求。</p>
+  </div>
+</ToolLayout>

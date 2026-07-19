@@ -1,0 +1,20 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import ColorExtract from '../components/tools/ColorExtract.tsx';
+---
+<ToolLayout slug="color-extract">
+  <ColorExtract client:load />
+  <div slot="seo-content">
+    <h2>在线图片颜色提取工具</h2>
+    <p>从图片中提取主色调，生成调色板，支持 HEX/RGB/HSL 三种格式复制。采用中位切分（Median Cut）算法对图片像素做颜色量化，与 Photoshop 调色板提取原理一致。所有处理在浏览器 Canvas 本地完成。</p>
+    <h3>颜色提取算法原理</h3>
+    <p>中位切分算法将图片所有像素映射到 RGB 三维色彩空间，然后递归地将色彩空间切分成若干个色块：每次选择最长维度，沿中位数切分。切分 N 次后得到 2^N 个色块，每个色块的代表色就是该色块内所有像素的平均色。这种算法既快又能保留图片的主要色彩特征。</p>
+    <h3>提取颜色的用途</h3>
+    <ul>
+      <li><strong>主题配色</strong>：从品牌 Logo 提取主色，生成 UI 主题。</li>
+      <li><strong>设计参考</strong>：分析优秀设计作品的配色方案。</li>
+      <li><strong>插画取色</strong>：从参考照片提取色板用于插画创作。</li>
+      <li><strong>数据可视化</strong>：根据图片主色调生成图表配色。</li>
+    </ul>
+  </div>
+</ToolLayout>

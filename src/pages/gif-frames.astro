@@ -1,0 +1,21 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import GifFrames from '../components/tools/GifFrames.tsx';
+---
+<ToolLayout slug="gif-frames">
+  <GifFrames client:load />
+  <div slot="seo-content">
+    <h2>在线 GIF 截帧工具</h2>
+    <p>将 GIF 动图分解为单帧 PNG 图片，查看每帧延迟时间，支持批量下载。用 gifuct-js 库在浏览器本地解析 GIF 二进制流逐帧解码，GIF 文件不会上传服务器。</p>
+    <h3>GIF 帧延迟的奥秘</h3>
+    <p>GIF 的每一帧都有自己的延迟时间（单位：1/100 秒）。浏览器规范要求最小延迟为 20ms（即 50fps 上限），原始 GIF 中低于 20ms 的延迟会被强制提升。本工具会完整展示每帧的真实延迟，帮你理解 GIF 的播放节奏。</p>
+    <h3>GIF 截帧的用途</h3>
+    <ul>
+      <li><strong>表情包制作</strong>：从动图截取关键帧做静态表情。</li>
+      <li><strong>动图分析</strong>：研究动画的关键姿势与节奏。</li>
+      <li><strong>内容创作</strong>：截取 GIF 精彩瞬间用作封面、配图。</li>
+      <li><strong>GIF 重制</strong>：拆帧后重新调整延迟、删帧、加帧，再合成新 GIF。</li>
+    </ul>
+    <p>导出的 PNG 帧无损保留 GIF 原始像素与透明通道，画质与原 GIF 一致。如需批量转 JPG 可用 <a href="/format-convert">格式转换工具</a>。</p>
+  </div>
+</ToolLayout>

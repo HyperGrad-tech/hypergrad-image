@@ -1,0 +1,21 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import ExifRemover from '../components/tools/ExifRemover.tsx';
+---
+<ToolLayout slug="exif-remover">
+  <ExifRemover client:load />
+  <div slot="seo-content">
+    <h2>在线 EXIF 清理工具</h2>
+    <p>一键删除照片中的所有 EXIF 元数据（含 GPS 定位、相机信息、拍摄参数），保护隐私。批量处理支持，所有图片在浏览器本地重新编码，原图和新图都不会上传服务器。</p>
+    <h3>为什么要清理 EXIF</h3>
+    <p>照片里的 EXIF 包含 GPS 定位、相机序列号、拍摄时间等敏感信息。把带 EXIF 的原图发给陌生人或上传到未承诺清理的平台，对方可以：</p>
+    <ul>
+      <li>在地图上精确定位你家、公司、常去地点。</li>
+      <li>通过相机序列号追溯到你的其他照片。</li>
+      <li>通过拍摄时间 + 位置推断生活规律。</li>
+    </ul>
+    <p>清理 EXIF 是数字时代的基本卫生习惯。本工具与 <a href="https://hypergrad.cn" target="_blank" rel="noopener">DeepSeal 加密笔记应用</a> 共享同一个隐私理念：你的数据只有你说了算。</p>
+    <h3>清理后的影响</h3>
+    <p>清理 EXIF 不会影响照片画质，只是剥离元数据。照片的像素数据完整保留。清理后照片文件体积可能略微减小（EXIF 通常占几十 KB）。清理是不可逆的，建议保留原图备份。</p>
+  </div>
+</ToolLayout>

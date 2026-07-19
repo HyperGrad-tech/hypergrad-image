@@ -1,0 +1,20 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import WebpConvert from '../components/tools/WebpConvert.tsx';
+---
+<ToolLayout slug="webp-convert">
+  <WebpConvert client:load />
+  <div slot="seo-content">
+    <h2>在线 WebP 转换工具</h2>
+    <p>JPG、PNG 与 WebP 双向互转，质量可调，保留透明通道。WebP 是 Google 推出的现代图片格式，同质量下比 JPG 小 25%-35%，是网站性能优化的首选格式。所有转换在浏览器 Canvas 本地完成。</p>
+    <h3>WebP 优势</h3>
+    <ul>
+      <li><strong>体积更小</strong>：比 JPG 小 25-35%，比 PNG 小更多。</li>
+      <li><strong>支持透明</strong>：像 PNG 一样有 alpha 通道。</li>
+      <li><strong>支持动画</strong>：像 GIF 一样可做动图，且体积更小。</li>
+      <li><strong>兼容性好</strong>：2026 年浏览器支持率超 98%。</li>
+    </ul>
+    <h3>什么时候不要用 WebP</h3>
+    <p>需要被旧版图片处理软件编辑的场景（Photoshop 2021 前版本不支持 WebP 编辑）；需要被旧版 iOS App 加载的场景（iOS 14 之前不支持 WebP）。其他 Web 场景都建议使用 WebP。</p>
+  </div>
+</ToolLayout>

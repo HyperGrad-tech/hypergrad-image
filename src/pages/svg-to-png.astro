@@ -1,0 +1,18 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import SvgToPng from '../components/tools/SvgToPng.tsx';
+---
+<ToolLayout slug="svg-to-png">
+  <SvgToPng client:load />
+  <div slot="seo-content">
+    <h2>在线 SVG 转 PNG 工具</h2>
+    <p>将矢量 SVG 转换为位图 PNG，支持自定义输出分辨率、2x/3x 高清倍率、批量转换。SVG 矢量图放大不失真，转 PNG 时按目标尺寸渲染保证清晰度。所有渲染在浏览器 Canvas 本地完成。</p>
+    <h3>倍率怎么选</h3>
+    <ul>
+      <li><strong>1x</strong>：普通屏幕（老式显示器、低分辨率场景）。</li>
+      <li><strong>2x</strong>：主流高清屏（Retina MacBook、绝大多数手机）默认选择。</li>
+      <li><strong>3x</strong>：超高分辨率屏（iPhone Pro 系列、高端 Android）。</li>
+    </ul>
+    <p>建议按使用场景的 2x 导出，兼顾清晰度与体积。若 SVG 用于 favicon 等小尺寸场景，可直接指定目标像素尺寸（如 32、64、128）。</p>
+  </div>
+</ToolLayout>

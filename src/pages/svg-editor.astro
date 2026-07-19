@@ -1,0 +1,19 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import SvgEditor from '../components/tools/SvgEditor.tsx';
+---
+<ToolLayout slug="svg-editor">
+  <SvgEditor client:load />
+  <div slot="seo-content">
+    <h2>在线 SVG 编辑器</h2>
+    <p>SVG 编辑器提供源码编辑与实时预览双栏布局，左侧修改 XML 代码，右侧即时渲染。适合微调图标颜色、修改路径、调整文字、学习 SVG 语法。所有编辑内容只存在于浏览器内存，不会保存到服务器。</p>
+    <h3>SVG 核心语法速查</h3>
+    <ul>
+      <li><strong>&lt;path d="..."&gt;</strong>：路径，最强大的图形元素，M=移动 L=直线 C=曲线 Z=闭合。</li>
+      <li><strong>&lt;rect&gt; / &lt;circle&gt; / &lt;ellipse&gt; / &lt;line&gt;</strong>：基本几何图形。</li>
+      <li><strong>fill / stroke</strong>：填充色与描边色，支持 hex、rgb、关键字。</li>
+      <li><strong>viewBox="x y w h"</strong>：定义 SVG 内部坐标系，决定缩放与拉伸行为。</li>
+      <li><strong>&lt;g&gt;</strong>：分组元素，子元素继承父组属性。</li>
+    </ul>
+  </div>
+</ToolLayout>

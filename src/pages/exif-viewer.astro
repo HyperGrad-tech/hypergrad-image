@@ -1,0 +1,19 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import ExifViewer from '../components/tools/ExifViewer.tsx';
+---
+<ToolLayout slug="exif-viewer">
+  <ExifViewer client:load />
+  <div slot="seo-content">
+    <h2>在线 EXIF 信息查看工具</h2>
+    <p>读取照片中的所有 EXIF 元数据，包括相机型号、镜头、光圈快门 ISO、焦距、白平衡、拍摄时间、GPS 定位、软件信息等。EXIF 完全在浏览器本地用 exifr 库解析，照片不会上传服务器。</p>
+    <h3>EXIF 包含的敏感信息</h3>
+    <ul>
+      <li><strong>GPS 定位</strong>：手机拍照若开启位置服务，会记录精确经纬度（精度几米到几十米）。</li>
+      <li><strong>相机序列号</strong>：可追溯到具体设备。</li>
+      <li><strong>拍摄时间</strong>：精确到秒，比文件修改时间更可信。</li>
+      <li><strong>软件信息</strong>：暴露用了什么修图软件及版本。</li>
+    </ul>
+    <p>分享照片前建议先用 <a href="/exif-remover">EXIF 清理工具</a> 移除这些信息，保护个人隐私。社交平台（微信、微博）会自动剥离 EXIF，但邮件附件、聊天工具直传原图不会。</p>
+  </div>
+</ToolLayout>

@@ -11,87 +11,15 @@ const sisters = getSisterSites('image');
       <div class="logo-sub">Image · 图片工具箱</div>
     </div>
   </a>
-  <div class="header-search">
-    <input type="search" id="site-search" placeholder="搜索工具（如 SVG、WebP、EXIF...）" autocomplete="off" />
-  </div>
   <nav class="header-nav">
     <a href="/">全部工具</a>
-    <div class="sister-dropdown" id="sister-dropdown">
-      <button class="sister-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-        姊妹站 <span class="sister-caret">▾</span>
-      </button>
-      <div class="sister-menu" role="menu">
-        {sisters.map(s => (
-          <a href={s.href} class="sister-link" target="_blank" rel="noopener" role="menuitem">
-            <span class="sister-icon">{s.icon}</span>
-            <span class="sister-text">
-              <strong>{s.shortName}</strong>
-              <small>{s.slogan}</small>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
+{sisters.map(s => (
+      <a href={s.href} class="nav-sister" target="_blank" rel="noopener" title={s.slogan}>
+        <span class="nav-sister-icon">{s.icon}</span>
+        <span class="nav-sister-name">{s.shortName}</span>
+      </a>
+    ))}
     <a href="https://hypergrad.cn" target="_blank" rel="noopener">DeepSeal 官网</a>
     <a href="https://hypergrad.cn#pricing" target="_blank" rel="noopener" class="header-cta">下载 DeepSeal</a>
   </nav>
 </header>
-<script is:inline>
-  (function () {
-    var dd = document.getElementById('sister-dropdown');
-    if (!dd) return;
-    var toggle = dd.querySelector('.sister-toggle');
-    if (!toggle) return;
-    toggle.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var isOpen = dd.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    document.addEventListener('click', function () {
-      dd.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        dd.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-    dd.addEventListener('click', function (e) { e.stopPropagation(); });
-  })();
-</script>
-<script is:inline>
-  // 站内搜索：输入关键词跳转匹配工具
-  const tools = [
-    {slug:'svg-optimize',name:'SVG 优化压缩',shortName:'SVG 优化',keywords:['svg优化','svg压缩','svg minimize','svg 清理','svg 体积减小','svg 精简']},
-    {slug:'svg-editor',name:'SVG 在线编辑器',shortName:'SVG 编辑',keywords:['svg编辑器','svg在线编辑','svg editor','svg代码编辑','svg预览']},
-    {slug:'svg-to-png',name:'SVG 转 PNG',shortName:'SVG→PNG',keywords:['svg转png','svg 转 png','svg 转图片','svg 导出 png','svg to png']},
-    {slug:'webp-convert',name:'WebP 转换',shortName:'WebP',keywords:['webp转换','webp转png','png转webp','jpg转webp','webp转jpg','在线webp']},
-    {slug:'exif-viewer',name:'EXIF 信息查看',shortName:'EXIF 查看',keywords:['exif查看','exif信息','图片exif','照片exif','exif reader','查看exif']},
-    {slug:'exif-remover',name:'EXIF 清理',shortName:'EXIF 清理',keywords:['清除exif','删除exif','exif清理','去除exif','照片去exif','隐私保护']},
-    {slug:'base64-image',name:'Base64 与图片互转',shortName:'Base64↔图',keywords:['图片转base64','base64转图片','image to base64','base64 to image','data url']},
-    {slug:'placeholder',name:'占位图生成',shortName:'占位图',keywords:['占位图生成','placeholder图片','占位图','placeholder image','占位图片']},
-    {slug:'color-extract',name:'图片颜色提取',shortName:'颜色提取',keywords:['颜色提取','图片取色','主色调提取','调色板生成','图片主色']},
-    {slug:'format-convert',name:'图片格式转换',shortName:'格式转换',keywords:['图片格式转换','png转jpg','jpg转png','avif转换','图片转换','在线图片转换']},
-    {slug:'image-stitch',name:'图片拼接',shortName:'图片拼接',keywords:['图片拼接','图片合成','多图拼接','纵向拼接','横向拼接','长图拼接']},
-    {slug:'gif-frames',name:'GIF 截帧',shortName:'GIF 截帧',keywords:['gif截帧','gif分解','gif分帧','gif提取帧','gif 转图片','gif帧提取']}
-  ];
-  const search = document.getElementById('site-search');
-  if (search) {
-    search.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        const q = search.value.trim().toLowerCase();
-        if (!q) return;
-        let best = tools.find((t) =>
-          t.name.toLowerCase().includes(q) ||
-          t.shortName.toLowerCase().includes(q) ||
-          t.slug.includes(q) ||
-          t.keywords.some((k) => k.toLowerCase().includes(q) || q.includes(k.toLowerCase()))
-        );
-        if (best) {
-          window.location.href = '/' + best.slug;
-        }
-      }
-    });
-  }
-</script>

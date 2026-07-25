@@ -1,0 +1,21 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import SvgOptimize from '../../components/tools/en/SvgOptimize.tsx';
+---
+<ToolLayoutEn slug="svg-optimize">
+  <SvgOptimize client:load />
+  <div slot="seo-content">
+    <h2>Online SVG Optimizer & Compressor</h2>
+    <p>This SVG optimization tool cleans up redundant content in vector graphics, significantly reducing file size without affecting visual appearance. All parsing and optimization happens locally in your browser—your SVG is never uploaded to any server.</p>
+    <h3>Optimization Strategies</h3>
+    <ul>
+      <li><strong>Remove comments & metadata</strong>: Strip <code>&lt;!-- --&gt;</code> comments, <code>&lt;metadata&gt;</code> elements, and editor residue (data appended by Illustrator, Figma, Sketch, etc. on export).</li>
+      <li><strong>Remove default attributes</strong>: Properties like <code>stroke-width="1"</code> and <code>fill="black"</code> that are browser defaults can be safely removed.</li>
+      <li><strong>Reduce numeric precision</strong>: Truncate high-precision decimals like <code>12.3456789</code> to <code>12.346</code>—virtually indistinguishable to the eye but smaller in size.</li>
+      <li><strong>Collapse whitespace</strong>: Remove extra line breaks, indentation, and spaces; merge adjacent text nodes.</li>
+      <li><strong>Remove hidden elements</strong>: Strip <code>display="none"</code>, <code>opacity="0"</code>, and content outside the viewBox.</li>
+    </ul>
+    <h3>When Should You Optimize SVG?</h3>
+    <p>Any time you use SVGs for website icon systems, logos, or illustrations, it is recommended to optimize first. SVGs exported from design software are typically 2-5x larger than optimized versions, which has a noticeable impact on page performance. Optimized SVGs can also be inlined directly into HTML/CSS without additional HTTP requests.</p>
+  </div>
+</ToolLayoutEn>

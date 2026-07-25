@@ -1,0 +1,21 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import GifFrames from '../../components/tools/en/GifFrames.tsx';
+---
+<ToolLayoutEn slug="gif-frames">
+  <GifFrames client:load />
+  <div slot="seo-content">
+    <h2>Online GIF Frame Extractor</h2>
+    <p>Split a GIF animation into individual PNG frames, view the delay of each frame, and download them in batch. Powered by gifuct-js, the tool parses and decodes the GIF binary stream frame by frame entirely in your browser—the GIF file is never uploaded to a server.</p>
+    <h3>The Secret of GIF Frame Delays</h3>
+    <p>Every frame in a GIF has its own delay value (in units of 1/100 second). The browser specification requires a minimum delay of 20ms (i.e., a 50fps cap); any delay below 20ms in the original GIF is forcibly raised. This tool displays the true delay of each frame so you can understand the playback rhythm of the GIF.</p>
+    <h3>Use Cases for GIF Frame Extraction</h3>
+    <ul>
+      <li><strong>Meme creation</strong>: Extract key frames from an animation to make static stickers.</li>
+      <li><strong>Animation analysis</strong>: Study the key poses and timing of an animation.</li>
+      <li><strong>Content creation</strong>: Capture the best moment of a GIF for use as a cover or illustration.</li>
+      <li><strong>GIF remastering</strong>: Extract frames, then adjust delays, add or remove frames, and reassemble a new GIF.</li>
+    </ul>
+    <p>Exported PNG frames losslessly preserve the original pixels and alpha channel of the GIF, with image quality identical to the source. To batch-convert frames to JPG, use the <a href="/en/format-convert">Format Converter</a>.</p>
+  </div>
+</ToolLayoutEn>

@@ -1,0 +1,20 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import WebpConvert from '../../components/tools/en/WebpConvert.tsx';
+---
+<ToolLayoutEn slug="webp-convert">
+  <WebpConvert client:load />
+  <div slot="seo-content">
+    <h2>Online WebP Converter</h2>
+    <p>Convert between JPG, PNG, and WebP in both directions with adjustable quality and preserved transparency. WebP is a modern image format developed by Google—at equivalent quality, it is 25%-35% smaller than JPG, making it the top choice for website performance optimization. All conversion is done locally in your browser's Canvas.</p>
+    <h3>WebP Advantages</h3>
+    <ul>
+      <li><strong>Smaller size</strong>: 25-35% smaller than JPG, even smaller compared to PNG.</li>
+      <li><strong>Supports transparency</strong>: Has an alpha channel just like PNG.</li>
+      <li><strong>Supports animation</strong>: Can create animated images like GIF, but smaller.</li>
+      <li><strong>Wide compatibility</strong>: Over 98% browser support as of 2026.</li>
+    </ul>
+    <h3>When Not to Use WebP</h3>
+    <p>Scenarios where images need to be edited by older image editing software (Photoshop versions before 2021 do not support WebP editing); or loaded by older iOS apps (iOS prior to 14 does not support WebP). For all other web scenarios, WebP is recommended.</p>
+  </div>
+</ToolLayoutEn>

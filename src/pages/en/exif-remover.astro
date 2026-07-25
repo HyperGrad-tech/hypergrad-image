@@ -1,0 +1,21 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import ExifRemover from '../../components/tools/en/ExifRemover.tsx';
+---
+<ToolLayoutEn slug="exif-remover">
+  <ExifRemover client:load />
+  <div slot="seo-content">
+    <h2>Online EXIF Remover & Metadata Stripper</h2>
+    <p>Strip all EXIF metadata from your photos in one click—including GPS location data, camera information, and shooting parameters—to protect your privacy. This tool re-encodes your images locally in the browser, keeping only the pixel data and removing all attached metadata. Batch processing is supported.</p>
+    <h3>Why Removing EXIF Matters</h3>
+    <ul>
+      <li><strong>Location privacy</strong>: GPS data in EXIF can reveal your home, workplace, and frequented locations to anyone who receives the photo.</li>
+      <li><strong>Device privacy</strong>: Camera serial numbers and model info can be used to identify and track you.</li>
+      <li><strong>Professional discretion</strong>: Shooting parameters (aperture, exposure) may reveal your techniques.</li>
+    </ul>
+    <h3>Does Stripping EXIF Affect Image Quality?</h3>
+    <p>No. EXIF is metadata attached to the image file and is completely independent from the pixel data. This tool preserves all pixel data exactly as original—only the metadata is removed. The image looks identical before and after processing.</p>
+    <h3>Is EXIF Removal Reversible?</h3>
+    <p>No. Once EXIF metadata is stripped, it is permanently gone and cannot be recovered from the image itself. Always keep a backup of your original photos if you may need the metadata later.</p>
+  </div>
+</ToolLayoutEn>

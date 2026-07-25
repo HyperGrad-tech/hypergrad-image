@@ -1,0 +1,21 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import SvgEditor from '../../components/tools/en/SvgEditor.tsx';
+---
+<ToolLayoutEn slug="svg-editor">
+  <SvgEditor client:load />
+  <div slot="seo-content">
+    <h2>Online SVG Editor with Live Preview</h2>
+    <p>Edit SVG source code with real-time visual preview. The left panel is a code editor where you can modify the XML directly, and the right panel shows a live rendered preview—what you see is what you get. Adjust paths, fills, strokes, and other attributes with instant feedback. All editing happens locally in your browser.</p>
+    <h3>What Can You Do?</h3>
+    <ul>
+      <li><strong>Fine-tune icons</strong>: Adjust colors, sizes, and path coordinates for your design system.</li>
+      <li><strong>Modify path key points</strong>: Edit <code>d</code> attributes to reshape paths.</li>
+      <li><strong>Adjust text content</strong>: Change labels and text within SVG graphics.</li>
+      <li><strong>Inspect SVG structure</strong>: Understand how complex SVGs are organized.</li>
+      <li><strong>Learn SVG syntax</strong>: Experiment with elements and attributes in real time.</li>
+    </ul>
+    <h3>Import & Export</h3>
+    <p>Click "Import SVG" or drag and drop an .svg file to load it into the editor. After editing, you can copy the code to your clipboard or download the modified SVG file. For complex graphic creation, we recommend professional tools like Figma or Adobe Illustrator.</p>
+  </div>
+</ToolLayoutEn>

@@ -1,0 +1,18 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import SvgToPng from '../../components/tools/en/SvgToPng.tsx';
+---
+<ToolLayoutEn slug="svg-to-png">
+  <SvgToPng client:load />
+  <div slot="seo-content">
+    <h2>Online SVG to PNG Converter</h2>
+    <p>Convert vector SVG files to raster PNG images with custom resolution, 2x/3x retina scale, and batch conversion support. SVG vector graphics scale without quality loss, and rendering at your target size ensures crisp PNG output. All rendering is done locally in your browser's Canvas.</p>
+    <h3>Choosing the Right Scale</h3>
+    <ul>
+      <li><strong>1x</strong>: Standard displays (older monitors, low-resolution scenarios).</li>
+      <li><strong>2x</strong>: Mainstream retina displays (Retina MacBook, most smartphones)—the default choice.</li>
+      <li><strong>3x</strong>: Ultra-high-resolution displays (iPhone Pro series, premium Android devices).</li>
+    </ul>
+    <p>For general use, exporting at 2x provides the best balance of clarity and file size. For small-size use cases like favicons, you can specify exact pixel dimensions (e.g., 32, 64, 128).</p>
+  </div>
+</ToolLayoutEn>

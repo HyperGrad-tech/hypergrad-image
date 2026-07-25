@@ -1,0 +1,18 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import ImageStitch from '../../components/tools/en/ImageStitch.tsx';
+---
+<ToolLayoutEn slug="image-stitch">
+  <ImageStitch client:load />
+  <div slot="seo-content">
+    <h2>Online Image Stitching Tool</h2>
+    <p>Combine multiple images into one, either vertically or horizontally, with adjustable spacing, alignment, and background color. Perfect for creating long screenshots, conversation logs, before-and-after comparisons, and photo collages. All stitching is done locally in your browser's Canvas—images are never uploaded to a server.</p>
+    <h3>Two Stitching Modes</h3>
+    <ul>
+      <li><strong>Vertical stitch</strong>: Stack images top to bottom. Ideal for long images, conversation screenshot sequences, and comic panel layouts.</li>
+      <li><strong>Horizontal stitch</strong>: Arrange images left to right. Ideal for side-by-side comparisons (before/after, product comparison), collages, and wide panoramas.</li>
+    </ul>
+    <h3>Handling Different Image Sizes</h3>
+    <p>When stitching vertically, images of different widths can be left-aligned, centered, or right-aligned, with empty areas filled by the background color. You can also choose "scale to uniform width" to resize all images to the width of the narrowest one. Horizontal stitching works the same way with top, center, or bottom alignment, or scaling to a uniform height.</p>
+  </div>
+</ToolLayoutEn>

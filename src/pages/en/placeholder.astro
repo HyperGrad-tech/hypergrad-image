@@ -1,0 +1,20 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import Placeholder from '../../components/tools/en/Placeholder.tsx';
+---
+<ToolLayoutEn slug="placeholder">
+  <Placeholder client:load />
+  <div slot="seo-content">
+    <h2>Online Placeholder Image Generator</h2>
+    <p>Generate placeholder images of any size with custom background color, text, and output format (PNG or SVG). Placeholder images are essential for frontend development, prototyping, and layout design—they simulate where final images will appear, ensuring your layout is correct before real images are available. All generation happens locally in your browser.</p>
+    <h3>PNG vs SVG Placeholders</h3>
+    <ul>
+      <li><strong>PNG (bitmap)</strong>: Best for simulating article covers, photo walls, and other bitmap scenarios. Larger file size.</li>
+      <li><strong>SVG (vector)</strong>: Best for logo and icon placeholders. Scales infinitely, typically only a few hundred bytes—far smaller than PNG.</li>
+    </ul>
+    <h3>Custom Text</h3>
+    <p>Display any text on your placeholder. The default shows the dimensions (e.g., 800×600). Custom text is useful for annotating image purpose (e.g., "Ad Slot", "User Avatar") to facilitate communication between designers and developers during the prototyping phase.</p>
+    <h3>Preventing Layout Shift</h3>
+    <p>Using properly sized placeholder images during development prevents Cumulative Layout Shift (CLS)—a key Core Web Vitals metric that affects SEO rankings. By reserving space with placeholders, your page layout remains stable as real images load.</p>
+  </div>
+</ToolLayoutEn>

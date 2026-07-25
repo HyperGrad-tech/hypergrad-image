@@ -1,12 +1,12 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { tools, priorityMeta, toolsByPriority, type Priority } from '../data/tools';
+import '../../styles/global.css';
+import HeaderEn from '../../components/HeaderEn.astro';
+import FooterEn from '../../components/FooterEn.astro';
+import { tools, priorityMeta, toolsByPriority, type Priority } from '../../data/tools-en';
 
 const priorityOrder: Priority[] = ['P0', 'P1', 'P2'];
 const totalTools = tools.length;
-import { getSisterSites } from '../data/sisterSites';
+import { getSisterSites } from '../../data/sisterSites';
 const sisters = getSisterSites('image');
 
 const homeSchema = {
@@ -17,15 +17,15 @@ const homeSchema = {
       "@id": "https://hypergrad.cn/#organization",
       "name": "HyperGrad",
       "url": "https://hypergrad.cn/",
-      "description": "HyperGrad 是一系列纯前端在线工具 + 本地加密笔记应用的集合站，专注隐私保护与本地化处理。"
+      "description": "HyperGrad is a collection of client-side online tools and a local encrypted notes app, focused on privacy protection and local processing."
     },
     {
       "@type": "WebSite",
-      "@id": "https://image.hypergrad.cn/#website",
-      "url": "https://image.hypergrad.cn/",
-      "name": "HyperGrad Image — 纯前端图片工具箱 · SVG/WebP/EXIF · 100% 本地处理",
-      "description": "12 个细分图片工具：SVG 优化/编辑/转PNG、WebP 转换、EXIF 查看/清理、占位图、Base64 互转、颜色提取、图片拼接、GIF 截帧、格式转换。所有图片处理在浏览器本地完成，不上传服务器。",
-      "inLanguage": "zh-CN",
+      "@id": "https://image.hypergrad.cn/#website-en",
+      "url": "https://image.hypergrad.cn/en/",
+      "name": "HyperGrad Image — Free Online Image Tools · SVG/WebP/EXIF · 100% Browser-Based",
+      "description": "12 specialized image tools: SVG optimizer/editor/converter, WebP converter, EXIF viewer/remover, placeholder generator, Base64 converter, color extractor, image stitcher, GIF frame extractor, format converter. All image processing happens in your browser—nothing is uploaded.",
+      "inLanguage": "en",
       "publisher": {
         "@id": "https://hypergrad.cn/#organization"
       }
@@ -35,26 +35,24 @@ const homeSchema = {
 
 ---
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HyperGrad Image — 纯前端图片工具箱 · SVG/WebP/EXIF · 100% 本地处理</title>
-  <meta name="description" content="12 个细分图片工具：SVG 优化/编辑/转PNG、WebP 转换、EXIF 查看/清理、占位图、Base64 互转、颜色提取、图片拼接、GIF 截帧、格式转换。所有图片处理在浏览器本地完成，不上传服务器。" />
-  <meta name="keywords" content="图片工具,svg优化,svg转png,webp转换,exif查看,exif清理,占位图,base64转图片,颜色提取,图片拼接,gif截帧,图片格式转换,avif转换" />
-  <link rel="canonical" href="https://image.hypergrad.cn/" />
-  <!-- hreflang: ZH ↔ EN paired -->
-  <link rel="alternate" hreflang="zh-CN" href="https://image.hypergrad.cn/" />
+  <title>HyperGrad Image — Free Online Image Tools · SVG/WebP/EXIF · 100% Browser-Based</title>
+  <meta name="description" content="12 free online image tools: SVG optimizer/editor/converter, WebP converter, EXIF viewer/remover, placeholder generator, Base64 converter, color extractor, image stitcher, GIF frame extractor. 100% browser-based, no upload." />
+  <meta name="keywords" content="image tools, svg optimizer, svg to png, webp converter, exif viewer, exif remover, placeholder image, image to base64, color extractor, image stitcher, gif frame extractor, image format converter, avif converter" />
+  <link rel="canonical" href="https://image.hypergrad.cn/en/" />
+  <!-- hreflang: EN ↔ ZH paired -->
   <link rel="alternate" hreflang="en" href="https://image.hypergrad.cn/en/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://image.hypergrad.cn/" />
   <link rel="alternate" hreflang="x-default" href="https://image.hypergrad.cn/" />
-  <meta property="og:title" content="HyperGrad Image — 纯前端图片工具箱" />
-  <meta property="og:description" content="12 个细分图片工具，100% 本地处理，图片不离开浏览器。" />
+  <meta property="og:title" content="HyperGrad Image — Free Online Image Tools" />
+  <meta property="og:description" content="12 free online image tools. 100% browser-based, images never leave your browser." />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <!-- 搜索引擎验证 -->
-  <meta name="baidu-site-verification" content="codeva-qtuSTwWsJ7" />
   <meta name="google-site-verification" content="UCCA8-g007RZIy8Z1p2OYGcWPEo_1_kj4SzNP9VTJC0" />
-  <!-- Baidu Tongji（跨子域追踪 hypergrad.cn） -->
   <script is:inline>
 var _hmt = _hmt || [];
 _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
@@ -65,29 +63,27 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
   s.parentNode.insertBefore(hm, s);
 })();
   </script>
-  <!-- home-schema:start -->
   <script type="application/ld+json" set:html={JSON.stringify(homeSchema)} />
-  <!-- home-schema:end -->
 </head>
 <body>
-  <!-- DeepSeal 推广条 -->
+  <!-- DeepSeal promo banner -->
   <div class="promo-banner" id="promo-banner">
     <span>
-      <strong>DeepSeal</strong> — 本地加密笔记应用，你的隐私只有你说了算。
-      <a href="https://hypergrad.cn#pricing" target="_blank" rel="noopener">免费下载 →</a>
+      <strong>DeepSeal</strong> — Local encrypted notes app. Your privacy, your rules.
+      <a href="https://hypergrad.cn#pricing" target="_blank" rel="noopener">Download Free →</a>
     </span>
     <span class="promo-close" onclick="document.getElementById('promo-banner').style.display='none'">×</span>
   </div>
 
-  <Header />
+  <HeaderEn />
 
   <main class="main" style="max-width: var(--content-max); margin: 0 auto;">
-    <!-- 快速导航工具条（置顶，让用户进站即可点工具） -->
+    <!-- Quick navigation -->
     <section class="quick-nav">
-      <div class="quick-nav-title">快速访问 · 全部 {totalTools} 个工具</div>
+      <div class="quick-nav-title">Quick Access · All {totalTools} Tools</div>
       <div class="quick-nav-chips">
         {tools.map(t => (
-          <a href={`/${t.slug}`} class="quick-chip">
+          <a href={`/en/${t.slug}`} class="quick-chip">
             <span class="quick-chip-icon">{t.icon}</span>
             <span>{t.name}</span>
           </a>
@@ -96,7 +92,7 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
     </section>
 
 
-    <!-- 按优先级分区 -->
+    <!-- Sections by priority -->
     {priorityOrder.map(p => {
       const list = toolsByPriority(p);
       const meta = priorityMeta[p];
@@ -104,18 +100,18 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
         <section class="priority-section">
           <div class="priority-header">
             <h2>{meta.label}</h2>
-            <span class="priority-tag" style={`background:${meta.bg};color:${meta.color}`}>{p} · {list.length} 个</span>
+            <span class="priority-tag" style={`background:${meta.bg};color:${meta.color}`}>{p} · {list.length} tools</span>
             <span class="priority-desc">{meta.desc}</span>
           </div>
           <div class="tool-grid">
             {list.map(t => (
-              <a href={`/${t.slug}`} class="tool-card-home">
+              <a href={`/en/${t.slug}`} class="tool-card-home">
                 <div class="card-icon">{t.icon}</div>
                 <h3>{t.name}</h3>
                 <p>{t.desc}</p>
                 <div class="card-meta">
                   <span>{t.category}</span>
-                  <span>日均 {t.volume} 搜索</span>
+                  <span>~{t.volume} searches/mo</span>
                 </div>
               </a>
             ))}
@@ -126,8 +122,8 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
 
 <!-- SISTER-CARDS -->
     <section class="sister-sites-section">
-      <h2>还需要别的工具？看看姊妹站</h2>
-      <p class="sister-section-desc">HyperGrad 一共 5 个工具站，全部本地处理、互不打扰——挑一个继续探索。</p>
+      <h2>Need other tools? Explore our sister sites</h2>
+      <p class="sister-section-desc">HyperGrad has 5 tool sites in total, all with local processing and no interference—pick one to explore.</p>
       <div class="sister-cards">
         {sisters.map(s => (
           <a href={s.href} class="sister-card" target="_blank" rel="noopener">
@@ -144,49 +140,48 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
                 <li>{h.name}</li>
               ))}
             </ul>
-            <span class="sister-card-cta">访问 {s.shortName} →</span>
+            <span class="sister-card-cta">Visit {s.shortName} →</span>
           </a>
         ))}
       </div>
     </section>
 
-    <!-- 关于 -->
+    <!-- About -->
     <section class="seo-content">
-      <h2>关于 HyperGrad Image</h2>
+      <h2>About HyperGrad Image</h2>
       <p>
-        HyperGrad Image 是一个纯前端的图片工具集合，收录了 <strong>{totalTools} 个</strong>日常开发与设计中高频使用的细分图片工具。
-        与其他图片工具站不同，本站所有图片处理都在<strong>浏览器本地</strong>完成——你上传的 SVG、照片、GIF，
-        永远不会通过网络发送到任何服务器。这意味着：
+        HyperGrad Image is a collection of fully client-side image tools, featuring <strong>{totalTools} specialized tools</strong> for everyday development and design tasks.
+        Unlike other image tool sites, all image processing on this site happens <strong>in your browser</strong>—your SVGs, photos, and GIFs
+        are never transmitted over the network to any server. This means:
       </p>
       <ul>
-        <li><strong>隐私安全</strong>：处理含 EXIF 的私人照片、商业设计稿，无需担心泄露。</li>
-        <li><strong>离线可用</strong>：页面加载完成后，断网也能继续使用。</li>
-        <li><strong>速度快</strong>：无网络往返，所有操作即时响应。</li>
-        <li><strong>无广告</strong>：首年完全无广告，专注于体验。</li>
+        <li><strong>Privacy & Security</strong>: Process personal photos with EXIF data or commercial design files without worrying about leaks.</li>
+        <li><strong>Works Offline</strong>: Once the page loads, you can keep using it without an internet connection.</li>
+        <li><strong>Fast</strong>: No network round-trips—every operation responds instantly.</li>
+        <li><strong>No Ads</strong>: Currently completely ad-free, focused on the experience.</li>
       </ul>
-      <h3>差异化定位：避开 TinyPNG 主战场</h3>
+      <h3>Our Differentiation: Avoiding the TinyPNG Battleground</h3>
       <p>
-        本站刻意避开 PNG/JPG 压缩这个红海（TinyPNG、智图已是霸主），聚焦三个有差异化壁垒的品类：
-        <strong>SVG 工具</strong>（优化、编辑、转 PNG）、<strong>现代格式转换</strong>（WebP/AVIF 双向互转）、
-        <strong>EXIF 隐私</strong>（查看与清理）。这三个品类与 <a href="https://hypergrad.cn" target="_blank" rel="noopener">DeepSeal 加密笔记应用</a>
-        的隐私心智天然契合——<strong>你的数据只有你说了算</strong>。
+        This site deliberately avoids the crowded PNG/JPG compression space (where TinyPNG and similar tools dominate) and focuses on three categories with differentiated value:
+        <strong>SVG Tools</strong> (optimization, editing, PNG conversion), <strong>Modern Format Conversion</strong> (bidirectional WebP/AVIF), and
+        <strong>EXIF Privacy</strong> (viewing and stripping). These three categories naturally align with the privacy-first mindset of <a href="https://hypergrad.cn" target="_blank" rel="noopener">DeepSeal encrypted notes</a>—<strong>your data, your rules</strong>.
       </p>
-      <h3>与 HyperGrad 生态的关系</h3>
+      <h3>Part of the HyperGrad Ecosystem</h3>
       <p>
-        HyperGrad Image 与 <a href="https://devtools.hypergrad.cn" target="_blank" rel="noopener">HyperGrad DevTools 开发者工具站</a>、
-        <a href="https://hypergrad.cn" target="_blank" rel="noopener">DeepSeal 加密笔记应用</a> 同属 HyperGrad 生态。
-        三款产品共享同一个核心理念：<strong>本地处理、隐私优先、数据不离开设备</strong>。
+        HyperGrad Image belongs to the same ecosystem as <a href="https://devtools.hypergrad.cn" target="_blank" rel="noopener">HyperGrad DevTools</a> and
+        <a href="https://hypergrad.cn" target="_blank" rel="noopener">DeepSeal encrypted notes app</a>.
+        All three products share the same core philosophy: <strong>local processing, privacy first, data never leaves your device</strong>.
       </p>
     </section>
-    <!-- Hero（精简为一行醒目标语） -->
+    <!-- Hero -->
     <section class="home-hero home-hero-compact home-hero-compact--bottom">
-      <h1>纯前端图片工具箱 · <span class="hero-accent">SVG / WebP / EXIF 原图不外传</span></h1>
-      <div class="privacy-badge">{totalTools} 个工具 · 100% 本地处理 · 不上传 · 不存储</div>
+      <h1>Free Online Image Tools · <span class="hero-accent">SVG / WebP / EXIF · Images Never Leave Browser</span></h1>
+      <div class="privacy-badge">{totalTools} Tools · 100% Local Processing · No Upload · No Storage</div>
     </section>
 
   </main>
 
-  <Footer />
+  <FooterEn />
 
   <style is:global>
     .quick-nav {
@@ -234,7 +229,6 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
     }
     .quick-chip-icon { font-size: 14px; }
 
-    /* 精简版 hero：单行醒目标语 */
     .home-hero-compact {
       text-align: center;
       padding: var(--space-xl) var(--space-lg) var(--space-lg);
@@ -256,8 +250,7 @@ _hmt.push(['_setCookieDomain', '.hypergrad.cn']);
       font-size: 13px;
       padding: 6px 16px;
     }
-  
-    /* SISTER-CARDS — 首页姊妹站大卡片 */
+
     .sister-sites-section {
       margin: var(--space-xl) 0 var(--space-lg);
       padding-top: var(--space-lg);

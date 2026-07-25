@@ -1,0 +1,21 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import ExifViewer from '../../components/tools/en/ExifViewer.tsx';
+---
+<ToolLayoutEn slug="exif-viewer">
+  <ExifViewer client:load />
+  <div slot="seo-content">
+    <h2>Online EXIF Data Viewer</h2>
+    <p>Read all EXIF metadata embedded in your photos, including camera model, lens, aperture, shutter speed, ISO, focal length, GPS coordinates, and more. This tool uses the exifr library to parse EXIF data entirely in your browser—your photos are never uploaded to any server.</p>
+    <h3>What Information Can EXIF Contain?</h3>
+    <ul>
+      <li><strong>Camera details</strong>: Brand, model, lens model, serial number.</li>
+      <li><strong>Shooting parameters</strong>: Aperture (f-number), shutter speed, ISO, focal length, exposure mode, white balance, flash.</li>
+      <li><strong>Timestamps</strong>: Original capture date/time, creation and modification dates.</li>
+      <li><strong>GPS location</strong>: Latitude and longitude with link to view on a map.</li>
+      <li><strong>Software info</strong>: Editing software, artist name, copyright notices.</li>
+    </ul>
+    <h3>Why Do Some Photos Have No EXIF?</h3>
+    <p>Photos shared through social media platforms (WhatsApp, Instagram, Facebook) often have EXIF stripped to protect privacy and reduce file size. Some image editors also remove metadata on export. Screenshots and composite images never have EXIF data to begin with.</p>
+  </div>
+</ToolLayoutEn>

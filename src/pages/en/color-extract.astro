@@ -1,0 +1,20 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import ColorExtract from '../../components/tools/en/ColorExtract.tsx';
+---
+<ToolLayoutEn slug="color-extract">
+  <ColorExtract client:load />
+  <div slot="seo-content">
+    <h2>Online Image Color Extractor</h2>
+    <p>Extract dominant colors from any image and generate a color palette. This tool uses the median cut algorithm to quantize image pixels and identify the most prominent color clusters. Colors are displayed in HEX, RGB, and HSL formats with one-click copy. All processing happens locally in your browser—your images are never uploaded.</p>
+    <h3>How the Median Cut Algorithm Works</h3>
+    <p>The median cut algorithm divides the color space recursively: it finds the channel (R, G, or B) with the greatest range, sorts pixels by that channel, and splits at the median. This process repeats until the desired number of color buckets is reached. The average color of each bucket becomes one palette entry. This is the same principle used by Photoshop's "Save for Web" palette feature.</p>
+    <h3>How Many Colors to Extract</h3>
+    <ul>
+      <li><strong>3-5 colors</strong>: Ideal for theme palettes and brand color schemes.</li>
+      <li><strong>6-8 colors</strong>: A balanced default for most design work.</li>
+      <li><strong>10-12 colors</strong>: Full palette analysis for detailed color studies.</li>
+    </ul>
+    <p>If the extracted colors don't match what you see, try increasing the count. Images with rich gradients or gloss effects may produce averaged colors that look different from specific pixels you notice.</p>
+  </div>
+</ToolLayoutEn>

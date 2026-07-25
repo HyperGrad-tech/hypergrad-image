@@ -1,0 +1,22 @@
+---
+import ToolLayoutEn from '../../layouts/ToolLayoutEn.astro';
+import Base64Image from '../../components/tools/en/Base64Image.tsx';
+---
+<ToolLayoutEn slug="base64-image">
+  <Base64Image client:load />
+  <div slot="seo-content">
+    <h2>Online Image to Base64 Converter</h2>
+    <p>Convert images to Base64 Data URLs or decode Base64 strings back to images. Supports drag & drop, clipboard paste, and one-click copy. All encoding and decoding happens locally in your browser using the native FileReader API—neither your images nor Base64 strings are ever uploaded.</p>
+    <h3>What Is a Data URL?</h3>
+    <p>A Data URL is a scheme that embeds resources directly into a URL using Base64 encoding, in the format <code>data:image/png;base64,xxxx</code>. It can be used in HTML <code>img src</code>, CSS <code>background</code>, and email inline images to eliminate HTTP requests.</p>
+    <h3>Common Use Cases</h3>
+    <ul>
+      <li><strong>Inline small icons</strong> into HTML/CSS to reduce HTTP requests and speed up page load.</li>
+      <li><strong>Embed images in emails</strong> where image attachments may be blocked—Base64 inline images display directly.</li>
+      <li><strong>Transmit image data in JSON APIs</strong> as a Base64 string field.</li>
+      <li><strong>Generate CSS sprite placeholders</strong> for mockups and prototypes.</li>
+    </ul>
+    <h3>File Size Considerations</h3>
+    <p>Base64 encoding increases file size by approximately 33% (4/3 ratio). Therefore, it is not recommended for large images—use it only for small icons, placeholder images, and similar scenarios where avoiding an HTTP request is more valuable than the size overhead.</p>
+  </div>
+</ToolLayoutEn>

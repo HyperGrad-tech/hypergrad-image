@@ -6,7 +6,7 @@ interface ExifData {
 }
 
 export default function ExifViewer() {
-  const [exif, setExif] = useState<ExifData | null>(null);
+  const [exif, setExif] = useState<ExifData | null | undefined>(undefined);
   const [imgSrc, setImgSrc] = useState('');
   const [error, setError] = useState('');
   const [fileName, setFileName] = useState('');
@@ -44,10 +44,10 @@ export default function ExifViewer() {
     if (!file.type.startsWith('image/')) { setError('请选择图片文件'); return; }
     setFileName(file.name);
     setImgSrc(URL.createObjectURL(file));
-    setExif(null);
+    setExif(undefined);
     try {
       const data = await exifr.parse(file, { gps: true, tiff: true, exif: true, ifd0: true, ifd1: true, iptc: true, xmp: true });
-      setExif(data || null);
+      setExif(data ?? null);
     } catch (e) {
       setError('EXIF 解析失败，此图片可能不包含 EXIF 数据');
     }
@@ -91,7 +91,7 @@ export default function ExifViewer() {
           <div class="tool-card">
             {error ? (
               <div class="status-msg status-error">{error}</div>
-            ) : exif === null ? (
+            ) : exif === undefined ? (
               <div class="text-muted">解析中...</div>
             ) : Object.keys(exif).length === 0 ? (
               <div class="status-msg status-info">此照片不包含 EXIF 元数据。可能经过社交平台压缩或软件导出时剥离了元数据。</div>
@@ -145,7 +145,7 @@ export default function ExifViewer() {
         </div>
       )}
 
-      {exif && !error && (
+      {exif && !error && Object.keys(exif).length > 0 && (
         <div class="tool-card">
           <div class="font-bold mb-md">发现敏感信息？</div>
           <div class="status-msg status-info">

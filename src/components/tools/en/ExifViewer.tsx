@@ -6,7 +6,7 @@ interface ExifData {
 }
 
 export default function ExifViewer() {
-  const [exif, setExif] = useState<ExifData | null>(null);
+  const [exif, setExif] = useState<ExifData | null | undefined>(undefined);
   const [imgSrc, setImgSrc] = useState('');
   const [error, setError] = useState('');
   const [fileName, setFileName] = useState('');
@@ -43,10 +43,10 @@ export default function ExifViewer() {
     if (!file.type.startsWith('image/')) { setError('Please select an image file'); return; }
     setFileName(file.name);
     setImgSrc(URL.createObjectURL(file));
-    setExif(null);
+    setExif(undefined);
     try {
       const data = await exifr.parse(file, { gps: true, tiff: true, exif: true, ifd0: true, ifd1: true, iptc: true, xmp: true });
-      setExif(data || null);
+      setExif(data ?? null);
     } catch (e) {
       setError('EXIF parsing failed. This image may not contain EXIF data.');
     }
@@ -90,7 +90,7 @@ export default function ExifViewer() {
           <div class="tool-card">
             {error ? (
               <div class="status-msg status-error">{error}</div>
-            ) : exif === null ? (
+            ) : exif === undefined ? (
               <div class="text-muted">Parsing...</div>
             ) : Object.keys(exif).length === 0 ? (
               <div class="status-msg status-info">This photo contains no EXIF metadata. It may have been compressed by a social platform or had metadata stripped during export.</div>
@@ -144,7 +144,7 @@ export default function ExifViewer() {
         </div>
       )}
 
-      {exif && !error && (
+      {exif && !error && Object.keys(exif).length > 0 && (
         <div class="tool-card">
           <div class="font-bold mb-md">Found Sensitive Information?</div>
           <div class="status-msg status-info">

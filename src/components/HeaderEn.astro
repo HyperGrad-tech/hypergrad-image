@@ -1,7 +1,7 @@
 ---
 const isHome = Astro.url.pathname === '/en/' || Astro.url.pathname === '/en';
-import { getSisterSites } from '../data/sisterSites';
-const sisters = getSisterSites('image');
+import { getSisterSitesEn } from '../data/sisterSites-en';
+const sisters = getSisterSitesEn('image');
 ---
 <header class="header">
   <a href="/en/" class="header-logo">

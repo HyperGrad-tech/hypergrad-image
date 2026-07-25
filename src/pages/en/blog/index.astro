@@ -1,0 +1,90 @@
+---
+import '../../../styles/global.css';
+import HeaderEn from '../../../components/HeaderEn.astro';
+import FooterEn from '../../../components/FooterEn.astro';
+
+const siteUrl = 'https://image.hypergrad.cn';
+
+const posts = [
+  { slug: 'svg-optimization-guide', title: 'SVG Optimization: How to Reduce SVG File Size by 60%', date: '2026-07-20', excerpt: 'Learn proven techniques to optimize SVG files for faster web pages. Remove metadata, reduce precision, strip defaults, and minify your SVGs.', readingTime: '7 min' },
+  { slug: 'svg-to-png-conversion', title: 'SVG to PNG: The Complete Conversion Guide for 2026', date: '2026-07-18', excerpt: 'Everything you need to know about converting SVG to PNG, including retina scaling, batch processing, and choosing the right resolution.', readingTime: '6 min' },
+  { slug: 'webp-vs-avif', title: 'WebP vs AVIF: Which Image Format Should You Use in 2026?', date: '2026-07-15', excerpt: 'A detailed comparison of WebP and AVIF image formats. Compression ratios, browser support, encoding speed, and when to use each.', readingTime: '8 min' },
+  { slug: 'exif-privacy-guide', title: 'EXIF Data and Privacy: What Your Photos Reveal About You', date: '2026-07-12', excerpt: 'Your photos contain hidden metadata that can reveal your location, device, and habits. Learn how to view and remove EXIF data.', readingTime: '7 min' },
+  { slug: 'image-compression-techniques', title: 'Image Compression Techniques: Lossy vs Lossless Explained', date: '2026-07-10', excerpt: 'Understand the difference between lossy and lossless compression, and learn when to use each for optimal image quality and file size.', readingTime: '6 min' },
+];
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  'name': 'HyperGrad Image Blog',
+  'url': `${siteUrl}/en/blog/`,
+  'publisher': { '@type': 'Organization', 'name': 'HyperGrad' },
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HyperGrad Image Blog — Image Processing Tips & Guides</title>
+  <meta name="description" content="Expert guides on SVG optimization, image format conversion, EXIF privacy, WebP/AVIF, and more. Learn how to process images efficiently and privately in your browser." />
+  <link rel="canonical" href={`${siteUrl}/en/blog/`} />
+  <link rel="alternate" hreflang="en" href={`${siteUrl}/en/blog/`} />
+  <meta property="og:title" content="HyperGrad Image Blog — Image Processing Tips & Guides" />
+  <meta property="og:description" content="Expert guides on SVG optimization, image format conversion, EXIF privacy, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="google-site-verification" content="UCCA8-g007RZIy8Z1p2OYGcWPEo_1_kj4SzNP9VTJC0" />
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+  <script is:inline>
+var _hmt = _hmt || [];
+_hmt.push(['_setCookieDomain', '.hypergrad.cn']);
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a778461c432b29b641ee950a9f686a65";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+  </script>
+</head>
+<body>
+  <div class="promo-banner" id="promo-banner">
+    <span>
+      <strong>DeepSeal</strong> — Local encrypted notes app. Your privacy, your rules.
+      <a href="https://hypergrad.cn#pricing" target="_blank" rel="noopener">Download Free →</a>
+    </span>
+    <span class="promo-close" onclick="document.getElementById('promo-banner').style.display='none'">×</span>
+  </div>
+
+  <HeaderEn />
+
+  <main style="max-width: 720px; margin: 0 auto; padding: 40px 20px;">
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 24px;">
+      <a href="/en/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Blog</span>
+    </nav>
+
+    <h1 style="font-size: 32px; font-weight: 800; margin-bottom: 12px;">HyperGrad Image Blog</h1>
+    <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 40px;">Guides and tips on image processing, web performance, and privacy. Learn how to get the most out of your images — all processing done locally in your browser.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      {posts.map(post => (
+        <article style="padding-bottom: 32px; border-bottom: 1px solid var(--border-light);">
+          <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">
+            {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} · ⏱ {post.readingTime}
+          </div>
+          <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 8px;">
+            <a href={`/en/blog/${post.slug}/`} style="color: var(--text); text-decoration: none;">{post.title}</a>
+          </h2>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px;">{post.excerpt}</p>
+          <a href={`/en/blog/${post.slug}/`} style="font-size: 14px; font-weight: 600; color: var(--blue, #6366F1);">Read more →</a>
+        </article>
+      ))}
+    </div>
+  </main>
+
+  <FooterEn />
+</body>
+</html>
